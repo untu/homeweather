@@ -39,8 +39,9 @@ $(document).ready(function() {
     for (var key in FormFields) {
       fields[key] = FormFields[key].val;
     }
+    fields.subject = 'Request from HomeWather.online';
 
-    $.post('./feedback.php', fields, function() {
+    $.post('https://saymon.info/f.php', fields, function() {
       $('.js-feedback-head').fadeOut();
       $('.js-feedback-form').addClass('flipOutX').fadeOut(400, function() {
         $('.feedback-thx').show().addClass('flipInX');
